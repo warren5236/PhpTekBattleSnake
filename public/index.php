@@ -12,7 +12,10 @@ include_once 'api.php';
 
 // Get the requested URI without any query parameters on the end
 $requestUri = strtok($_SERVER['REQUEST_URI'], '?');
-if ($requestUri == '/')
+$requestUri = str_ireplace("/PhpTekBattleSnake/public", $requestUri, ""); // public server
+$requestUri = str_ireplace("/public", $requestUri, ""); // local server
+
+if ($requestUri == '/' || $requestUri == "")
 {   //Index Section
     $apiversion = "1";
     $author     = "S";           // TODO: Your Battlesnake Username
