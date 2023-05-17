@@ -18,6 +18,7 @@ ini_set("error_log", "php-error.log");
 
 // Get the requested URI without any query parameters on the end
 $requestUri = strtok($_SERVER['REQUEST_URI'], '?');
+error_log("Request: {$requestUri}");
 $requestUri = str_ireplace("/PhpTekBattleSnake/public", "", $requestUri); // public server
 $requestUri = str_ireplace("/public","", $requestUri); // local server
 
