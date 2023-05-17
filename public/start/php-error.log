@@ -1,0 +1,14 @@
+[17-May-2023 14:42:06 UTC] Request: /public/move
+[17-May-2023 14:42:06 UTC] 
+[17-May-2023 14:42:06 UTC] array (
+)
+[17-May-2023 14:42:06 UTC] Received move data: 
+[17-May-2023 14:42:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function moveResponse() in /Users/scottkeck-warren/Projects/ScottsBattleSnake/public/move/index.php:57
+Stack trace:
+#0 {main}
+  thrown in /Users/scottkeck-warren/Projects/ScottsBattleSnake/public/move/index.php on line 57
+[17-May-2023 14:43:42 UTC] Request: /public/move
+[17-May-2023 14:43:42 UTC] 
+[17-May-2023 14:43:42 UTC] array (
+)
+[17-May-2023 14:43:42 UTC] Received move data: 
