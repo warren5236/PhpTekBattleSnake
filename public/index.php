@@ -21,6 +21,7 @@ $requestUri = strtok($_SERVER['REQUEST_URI'], '?');
 error_log("Request: {$requestUri}");
 $requestUri = str_ireplace("/PhpTekBattleSnake/public", "", $requestUri); // public server
 $requestUri = str_ireplace("/public","", $requestUri); // local server
+$requestUri = trim($requestUri, "/");
 error_log("Clean Request: {$requestUri}");
 
 
