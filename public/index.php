@@ -19,7 +19,7 @@ if ($requestUri == '/' || $requestUri == "")
 {   //Index Section
     $apiversion = "1";
     $author     = "S";           // TODO: Your Battlesnake Username
-    $color      = "#red";    // TODO: Personalize
+    $color      = "#FF0000";    // TODO: Personalize
     $head       = "default";    // TODO: Personalize
     $tail       = "default";    // TODO: Personalize
 
