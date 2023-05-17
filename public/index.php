@@ -2,6 +2,12 @@
 
 include_once 'api.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ini_set("error_log", "php-error.log");
+
+
 /**
  * Basic index.php router that checks the incoming REQUEST_URI and decides what response to send.
  *
@@ -12,8 +18,10 @@ include_once 'api.php';
 
 // Get the requested URI without any query parameters on the end
 $requestUri = strtok($_SERVER['REQUEST_URI'], '?');
-$requestUri = str_ireplace("/PhpTekBattleSnake/public", $requestUri, ""); // public server
-$requestUri = str_ireplace("/public", $requestUri, ""); // local server
+$requestUri = str_ireplace("/PhpTekBattleSnake/public", "", $requestUri); // public server
+$requestUri = str_ireplace("/public","", $requestUri); // local server
+
+error_log(file_get_contents('php://input'));
 
 if ($requestUri == '/' || $requestUri == "")
 {   //Index Section
@@ -29,6 +37,8 @@ elseif ($requestUri == '/start')
 {
     // read the incoming request body stream and decode the JSON
     $data = json_decode(file_get_contents('php://input'));
+
+    error_log('Start');
 
     // TODO - if you have a stateful snake, you could do initialization work here
     startResponse();
