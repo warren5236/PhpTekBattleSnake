@@ -38,7 +38,7 @@ if ($requestUri == '/' || $requestUri == "")
 
     indexResponse($apiversion,$author,$color,$head, $tail);
 }
-elseif ($requestUri == '/start')
+elseif ($requestUri == 'start')
 {
     // read the incoming request body stream and decode the JSON
     $data = json_decode(file_get_contents('php://input'));
@@ -48,7 +48,7 @@ elseif ($requestUri == '/start')
     // TODO - if you have a stateful snake, you could do initialization work here
     startResponse();
 }
-elseif ($requestUri == '/move')
+elseif ($requestUri == 'move')
 {   //Move Section
     // read the incoming request body stream and decode the JSON
     $data = json_decode(file_get_contents('php://input'));
@@ -59,7 +59,7 @@ elseif ($requestUri == '/move')
     $possibleMove = ['up', 'down', 'left', 'right'];
     moveResponse($possibleMove[array_rand($possibleMove)]);
 }
-elseif ($requestUri == '/end')
+elseif ($requestUri == 'end')
 {
     // read the incoming request body stream and decode the JSON
     $data = json_decode(file_get_contents('php://input'));
