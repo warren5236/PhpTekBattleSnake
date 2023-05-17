@@ -23,6 +23,7 @@ $requestUri = str_ireplace("/PhpTekBattleSnake/public", "", $requestUri); // pub
 $requestUri = str_ireplace("/public","", $requestUri); // local server
 
 error_log(file_get_contents('php://input'));
+error_log(var_export($_POST));
 
 if ($requestUri == '/' || $requestUri == "")
 {   //Index Section
